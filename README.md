@@ -1,6 +1,6 @@
 # Inmersión Inglés
 
-Sistema de **gestión académica para la adquisición del idioma inglés**, construido con **Laravel** y **Filament**. Combina un panel administrativo para docentes/administradores con un portal para estudiantes que usa **inteligencia artificial** para generar **planes de estudio personalizados** según el nivel y progreso de cada alumno.
+Sistema de **gestión académica para la adquisición del idioma inglés**, construido con **Laravel 13** y **Filament v5**. Combina un panel administrativo para docentes/administradores con un portal para estudiantes que usa **inteligencia artificial** para generar **planes de estudio personalizados** según el nivel y progreso de cada alumno de acuerdo a la carrera profesional.
 
 ## ✨ Características principales
 
