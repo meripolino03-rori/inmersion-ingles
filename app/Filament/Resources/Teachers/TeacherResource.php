@@ -1,0 +1,67 @@
+<?php
+
+namespace App\Filament\Resources\Teachers;
+
+use App\Filament\Resources\Teachers\Pages\CreateTeacher;
+use App\Filament\Resources\Teachers\Pages\EditTeacher;
+use App\Filament\Resources\Teachers\Pages\ListTeachers;
+use App\Filament\Resources\Teachers\Schemas\TeacherForm;
+use App\Filament\Resources\Teachers\Tables\TeachersTable;
+
+use App\Models\Teacher;
+
+use BackedEnum;
+
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
+
+class TeacherResource extends Resource
+{
+    protected static ?string $model = Teacher::class;
+
+    // nombres en español
+    protected static ?string $navigationLabel  = 'Docentes';
+    protected static ?string $modelLabel       = 'Docente';
+    protected static ?string $pluralModelLabel = 'Docentes';
+
+    // orden menú
+    protected static ?int $navigationSort = 5;
+
+    // icono
+    protected static string|BackedEnum|null $navigationIcon =
+        Heroicon::OutlinedUserGroup;
+
+    // grupo menú
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Académico';
+    }
+
+    public static function form(Schema $schema): Schema
+    {
+        return TeacherForm::configure($schema);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return TeachersTable::configure($table);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index'  => ListTeachers::route('/'),
+            'create' => CreateTeacher::route('/create'),
+            'edit'   => EditTeacher::route('/{record}/edit'),
+        ];
+    }
+}

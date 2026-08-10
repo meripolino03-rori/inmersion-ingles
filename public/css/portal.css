@@ -1,0 +1,192 @@
+/* 1. VARIABLES Y BASE */
+:root {
+    --accent: #2563eb;
+    --accent-soft: rgba(37, 99, 235, 0.08);
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #94a3b8;
+    --success: #16a34a;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* 2. TIPOGRAFÍA ESPECIAL */
+.font-mono-portal {
+    font-family: 'DM Mono', monospace !important;
+    letter-spacing: -0.02em;
+}
+
+/* 3. NAVEGACIÓN COMPACTA */
+nav {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    height: 56px; /* Más bajo para ganar espacio */
+}
+
+.nav-links {
+    display: flex;
+    gap: 4px;
+}
+
+.nav-link {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #64748b;
+    transition: all .2s;
+}
+
+.nav-link:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+.nav-link.active {
+    background: var(--accent);
+    color: white;
+}
+
+/* 4. CONTENEDOR Y TÍTULOS */
+.container {
+    max-width: 1000px; /* Un poco más estrecho para armonía */
+    margin: 0 auto;
+    padding: 24px 20px; /* Reducido para evitar scroll */
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+}
+
+.page-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+/* 5. CARDS OPTIMIZADAS */
+.card {
+    background: white;
+    border: 1px solid var(--border) !important;
+    border-radius: 12px;
+    padding: 16px; /* Padding reducido */
+    margin-bottom: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Card principal (Nota final) con tu borde azul */
+.card-main {
+    border: 1.5px solid var(--accent) !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05);
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.card-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+/* 6. GRID DE HABILIDADES */
+.score-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.score-value-big {
+    font-family: 'DM Mono', monospace;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--accent);
+}
+
+.score-value-small {
+    font-family: 'DM Mono', monospace;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* 7. TABLAS LIMPIAS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 12px 8px;
+    font-size: 14px;
+    border-bottom: 1px solid #f8fafc;
+}
+
+tr:hover td {
+    background: #fcfdfe;
+}
+
+/* 8. COMPONENTES EXTRA */
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.bar-bg {
+    height: 4px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    margin-top: 8px;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: var(--accent);
+}
+
+.badge {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
