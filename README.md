@@ -1,58 +1,127 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Inmersión Inglés
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistema de **gestión académica para la adquisición del idioma inglés**, construido con **Laravel** y **Filament**. Combina un panel administrativo para docentes/administradores con un portal para estudiantes que usa **inteligencia artificial** para generar **planes de estudio personalizados** según el nivel y progreso de cada alumno.
 
-## About Laravel
+## ✨ Características principales
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Panel del docente
+- Registro de **calificaciones** (grades) por estudiante, criterio y rúbrica
+- Asignación de **evaluaciones** a estudiantes o grupos
+- Creación y gestión de **assignments** (tareas/trabajos)
+- Visualización del progreso académico de sus estudiantes a cargo
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Panel administrativo (Filament)
+- Gestión de **ciclos**, **unidades** y **asignaciones** (assignments)
+- **Rúbricas** y **criterios** de evaluación configurables
+- Registro y seguimiento de **evaluaciones** y **calificaciones** (grades)
+- Administración de **estudiantes**, **docentes** y **colegios/facultades**
+- Sistema de **roles y permisos** granular
+- Reportes exportables por grupo
+- Dashboard con estadísticas y gráficos (calificaciones por habilidad, estudiantes por colegio, etc.)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Portal del estudiante — aprendizaje con IA
+- **Examen de ubicación** (placement exam) para determinar el nivel inicial de inglés del alumno
+- **Plan de estudios personalizado**, generado con IA en función del resultado del examen y el avance del estudiante
+- **Prácticas** y **retos** (challenges) interactivos adaptados al nivel de cada alumno
+- Seguimiento de **progreso** individual a lo largo del ciclo académico
+- Asistencia impulsada por IA que acompaña al estudiante durante su proceso de aprendizaje del idioma
 
-## Learning Laravel
+## 🛠️ Stack tecnológico
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Backend:** Laravel
+- **Panel admin:** Filament
+- **Frontend:** Blade + Tailwind CSS + Vite
+- **Permisos:** Spatie Laravel Permission
+- **IA:** Integración con Groq
+- **Testing:** Pest
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📋 Requisitos previos
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+- PHP >= 8.2
+- Composer
+- Node.js y npm
+- MySQL (u otra base de datos compatible con Laravel)
 
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## 🚀 Instalación
 
 ```bash
-composer require laravel/boost --dev
+# Clonar el repositorio
+git clone https://github.com/meripolino03-rori/inmersion-ingles.git
+cd inmersion-ingles
 
-php artisan boost:install
+# Instalar dependencias de PHP
+composer install
+
+# Instalar dependencias de JS
+npm install
+
+# Copiar el archivo de entorno y generar la clave de aplicación
+cp .env.example .env
+php artisan key:generate
+
+# Configurar la base de datos en el archivo .env
+# DB_DATABASE, DB_USERNAME, DB_PASSWORD, etc.
+
+# Ejecutar migraciones y seeders
+php artisan migrate --seed
+
+# Compilar assets
+npm run build
+
+# Levantar el servidor local
+php artisan serve
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+La aplicación quedará disponible en `http://localhost:8000`.
 
-## Contributing
+## 🔑 Variables de entorno
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Copia `.env.example` a `.env` y configura al menos:
 
-## Code of Conduct
+```
+APP_NAME=
+APP_URL=
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+DB_CONNECTION=
+DB_HOST=
+DB_PORT=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
 
-## Security Vulnerabilities
+GROQ_API_KEY=
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🧪 Testing
 
-## License
+```bash
+php artisan test
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📁 Estructura del proyecto
+
+```
+app/
+├── Filament/          # Recursos, páginas y widgets del panel admin
+├── Http/Controllers/  # Controladores (auth, portal de estudiante, IA, reportes)
+├── Models/             # Modelos Eloquent (Student, Teacher, Grade, etc.)
+├── Policies/           # Autorización por recurso
+└── Services/           # Servicios externos (ej. GroqService)
+
+database/
+├── migrations/
+└── seeders/
+
+resources/
+└── views/portal/       # Vistas del portal del estudiante
+```
+
+## 📄 Licencia
+
+Este proyecto es de uso educativo/privado.
+
+## 👤 Autora
+
+**Merari Polino**
+- GitHub: [@meripolino03-rori](https://github.com/meripolino03-rori)
+- LinkedIn: [in/merari-polino](https://linkedin.com/in/merari-polino)
